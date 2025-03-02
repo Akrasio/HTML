@@ -22,7 +22,10 @@
             hex,
             vips
         }
-        document.getElementById("chat").style.color = hex;
+            function changeBackgroundColor(color) {
+                document.getElementById("chat").style.color = hex;
+            }
+            changeBackgroundColor(settings.hex);
             ComfyJS.onChat = (user, message) => {
             let m = [settings.vips.join("', '")]
             console.log(m)
@@ -46,7 +49,7 @@
         }
         ComfyJS.Init(streamer) 
     </script>
-            <div id="chat" style="font-size:40px; color: var(--hex);">
+            <div id="chat" style="font-size:40px;">
                 <ul>Deaths: 0</ul>
                 </div>        
 </body>
