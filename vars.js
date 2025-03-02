@@ -1,7 +1,7 @@
-let streamer = window.location.search?.streamer.substring(1)
-let vips = window.location.search?.vips?.split(" ")
-let hex = window.location.search?.hex || "red"
-let settings = {
+var streamer = window.location.search.streamer.substring(1)
+var vips = window.location.search?.vips?.split(" ")
+var hex = window.location.search?.hex || "red"
+var settings = {
     hex,
     vips
 }
