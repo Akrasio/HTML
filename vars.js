@@ -5,4 +5,3 @@ var settings = {
     hex,
     vips
 }
-module.exports = { streamer, settings }
