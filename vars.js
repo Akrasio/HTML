@@ -4,9 +4,9 @@ function getQueryParam(name) {
     return result ? decodeURIComponent(result[1]) : null;
 }
 
-var streamer = getQueryParam('streamer');
-var vips = getQueryParam('vips')?.split(" ")
-var hex = getQueryParam('hex') || "red"
+var streamer = getQueryParam("streamer");
+var vips = getQueryParam("vips")?.split(" ")
+var hex = getQueryParam("hex") || "red"
 var settings = {
     hex,
     vips
