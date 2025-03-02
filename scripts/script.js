@@ -83,4 +83,4 @@ ComfyJS.onChat = (user, command, message, flags, extra) => {
 }
 ComfyJS.Init(getQueryParam("streamer"))
 z = document.querySelector(".hangman_box h1")
-z.innerHTML = "ROUND: "+localStorage.getItem("game_wins") || 0
+z.innerHTML = "ROUND: "+(localStorage?.getItem("game_wins") != null ? localStorage?.getItem("game_wins") :  0)
