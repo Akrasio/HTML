@@ -7,9 +7,6 @@
 </head>
 
 <body>
-    <div id="chat" style="font-size:40px; color: hex;">
-        <ul>Deaths: 0</ul>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
     <script>
   function getQueryParam(name) {
@@ -25,6 +22,7 @@
             hex,
             vips
         }
+        document.getElementById("chat").style.color = hex;
             ComfyJS.onChat = (user, message) => {
             let m = [settings.vips.join("', '")]
             console.log(m)
@@ -48,6 +46,9 @@
         }
         ComfyJS.Init(streamer) 
     </script>
+            <div id="chat" style="font-size:40px; color: var(--hex);">
+                <ul>Deaths: 0</ul>
+                </div>        
 </body>
 
 </html>
