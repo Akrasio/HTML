@@ -9,7 +9,7 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
     <script>
-  function getQueryParam(name) {
+        function getQueryParam(name) {
             const regex = new RegExp('[?&]' + name + '=([^&#]*)', 'i');
             const result = regex.exec(window.location.search);
             return result ? decodeURIComponent(result[1]) : null;
@@ -22,11 +22,8 @@
             hex,
             vips
         }
-            function changeBackgroundColor(color) {
-                document.getElementById("chat").style.color = hex;
-            }
-            changeBackgroundColor(settings.hex);
-            ComfyJS.onChat = (user, message) => {
+
+        ComfyJS.onChat = (user, message) => {
             let m = [settings.vips.join("', '")]
             console.log(m)
             if (m.includes(user.toLowerCase())) return;
@@ -49,9 +46,15 @@
         }
         ComfyJS.Init(streamer) 
     </script>
-            <div id="chat" style="font-size:40px;">
-                <ul>Deaths: 0</ul>
-                </div>        
+    <div id="chat" style="font-size:40px;">
+        <ul>Deaths: 0</ul>
+    </div>
+    <script>
+        function changeBackgroundColor(color) {
+            document.getElementById("chat").style.color = hex;
+        }
+        changeBackgroundColor(settings.hex);
+    </script>
 </body>
 
 </html>
