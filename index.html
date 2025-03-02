@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Overlay</title>
+    <script src="./vars.js"></script>
+</head>
+
+<body>
+    <div id="chat" style="font-size:40px;color: <%= settings.hex %> ;">
+        <ul>Deaths: 0</ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+    <script>
+        ComfyJS.onChat = (user, message) => {
+            let m = [settings.vips.join("', '")]
+            console.log(m)
+            if (m.includes(user.toLowerCase())) return;
+            let chat = document.querySelector("#chat>ul");
+            if (message.startsWith("dc+")) {
+                let ttl = Number(localStorage.getItem("deaths"));
+                localStorage.setItem("deaths", ttl + 1)
+            }
+            if (message.startsWith("dcr")) {
+                let ttl = Number(localStorage.getItem("deaths"));
+                localStorage.setItem("deaths", 0)
+            }
+            if (message.startsWith("dc-")) {
+                let ttl = Number(localStorage.getItem("deaths"));
+                localStorage.setItem("deaths", ttl - 1)
+            }
+            let ttl = Number(localStorage.getItem("deaths"));
+            const newMessage = "Deaths: " + ttl;
+            chat.textContent = newMessage;
+        }
+        ComfyJS.Init(streamer) 
+    </script>
+</body>
+
+</html>
