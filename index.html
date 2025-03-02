@@ -7,13 +7,25 @@
 </head>
 
 <body>
-    <script src="https://get.revoltbots.org/vars.js" defer></script>
     <div id="chat" style="font-size:40px; color: hex;">
         <ul>Deaths: 0</ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
     <script>
-        ComfyJS.onChat = (user, message) => {
+  function getQueryParam(name) {
+            const regex = new RegExp('[?&]' + name + '=([^&#]*)', 'i');
+            const result = regex.exec(window.location.search);
+            return result ? decodeURIComponent(result[1]) : null;
+        }
+
+        var streamer = getQueryParam("streamer")
+        var vips = getQueryParam("vips")?.split(" ")
+        var hex = getQueryParam("hex") || "red"
+        var settings = {
+            hex,
+            vips
+        }
+            ComfyJS.onChat = (user, message) => {
             let m = [settings.vips.join("', '")]
             console.log(m)
             if (m.includes(user.toLowerCase())) return;
