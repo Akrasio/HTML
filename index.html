@@ -24,9 +24,9 @@
         }
 
         ComfyJS.onChat = (user, message) => {
-            let m = [settings.vips.join("', '")]
+            let m = [settings.vips.replace("+", "', '").replace("%20", "', '")]
             console.log(m)
-            if (m.includes(user.toLowerCase())) return;
+            if (!m.includes(user.toLowerCase())) return;
             let chat = document.querySelector("#chat>ul");
             if (message.startsWith("dc+")) {
                 let ttl = Number(localStorage.getItem("deaths"));
