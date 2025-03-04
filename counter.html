@@ -34,12 +34,12 @@
             let m = (flags.broadcaster || flags.mod || flags.vip)
             console.log(m)
             if (command && command.startsWith("dcr")) {
-            if (!m) return;
+            if (m == false) return;
                 let ttl = Number(localStorage.getItem("c_word"));
                 localStorage.setItem("c_word", 0)
              }
             if (command && command.startsWith("word")) {
-            if (!m) return;
+            if (m == false) return;
                 let ttl = Number(localStorage.getItem("c_word"));
                 localStorage.setItem("c_word", 0)
                 localStorage.setItem("t_word", args)
