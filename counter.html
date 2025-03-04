@@ -18,8 +18,10 @@
         var streamer = getQueryParam("streamer")
         var vips = getQueryParam("vips")?.split(" ")
         var hex = getQueryParam("hex") || "red"
+        var word = getQueryParam("word") || "hello"
         var settings = {
             hex,
+            word,
             vips
         }
 
