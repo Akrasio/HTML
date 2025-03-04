@@ -32,16 +32,19 @@
                 localStorage.setItem("c_word", ttl + 1)
             }
             let m = (flags.broadcaster || flags.mod || flags.vip)
-            if (command.startsWith("dcr")) {
+            console.log(command)
+            if (command && command.startsWith("dcr")) {
             if (!m) return;
                 let ttl = Number(localStorage.getItem("c_word"));
                 localStorage.setItem("c_word", 0)
+                return
             }
-            if (command.startsWith("word")) {
+            if (command && command.startsWith("word")) {
             if (!m) return;
                 let ttl = Number(localStorage.getItem("c_word"));
                 localStorage.setItem("c_word", 0)
                 localStorage.setItem("t_word", args)
+                return
             }
             let ttl = Number(localStorage.getItem("c_word"));
             const newMessage = ttl+ " "+ localStorage.getItem("t_word") + "'s";
