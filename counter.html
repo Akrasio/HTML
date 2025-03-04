@@ -25,14 +25,13 @@
             vips
         }
 
-        ComfyJS.onChat = (user, message, flags, command) => {
+        ComfyJS.onChat = (user, command, flags, message) => {
             let chat = document.querySelector("#chat>ul");
-            if (message.includes(localStorage.getItem("t_word") || settings.word)) {
+            if (!command && message.includes(localStorage.getItem("t_word") || settings.word)) {
                 let ttl = Number(localStorage.getItem("c_word"));
                 localStorage.setItem("c_word", ttl + 1)
             }
             let m = (flags.broadcaster || flags.mod || flags.vip)
-            console.log(command)
             if (command && command.startsWith("dcr")) {
             if (!m) return;
                 let ttl = Number(localStorage.getItem("c_word"));
@@ -47,7 +46,7 @@
                 return
             }
             let ttl = Number(localStorage.getItem("c_word"));
-            const newMessage = ttl+ " "+ localStorage.getItem("t_word") + "'s";
+            const newMessage = ttl+ " "+ (localStorage.getItem("t_word") || settings.word) + "'s";
             chat.textContent = newMessage;
         }
         ComfyJS.Init(streamer) 
