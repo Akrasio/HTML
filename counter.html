@@ -36,15 +36,13 @@
             if (!m) return;
                 let ttl = Number(localStorage.getItem("c_word"));
                 localStorage.setItem("c_word", 0)
-                return
-            }
+             }
             if (command && command.startsWith("word")) {
             if (!m) return;
                 let ttl = Number(localStorage.getItem("c_word"));
                 localStorage.setItem("c_word", 0)
                 localStorage.setItem("t_word", args)
-                return
-            }
+             }
             let ttl = Number(localStorage.getItem("c_word"));
             const newMessage = ttl+ " "+ (localStorage.getItem("t_word") || settings.word) + "'s";
             chat.textContent = newMessage;
