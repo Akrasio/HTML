@@ -26,7 +26,6 @@
         }
 
         ComfyJS.onChat = (user, message, command, flags) => {
-            console.log(m)
             let chat = document.querySelector("#chat>ul");
             if (message.includes(localStorage.getItem("t_word") || settings.word)) {
                 let ttl = Number(localStorage.getItem("c_word"));
