@@ -29,7 +29,9 @@
             if (message.includes(localStorage.getItem("t_word") || settings.word)) {
                 let ttl = Number(localStorage.getItem("c_word"));
                 localStorage.setItem("c_word", ttl + 1)
-                chat.textContent = newMessage;   
+                const newMessage = ttl+ " "+ (localStorage.getItem("t_word") || settings.word) + "'s";
+                chat.textContent = newMessage;
+
             }
         }
         
