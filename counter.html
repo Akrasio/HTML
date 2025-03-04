@@ -26,7 +26,7 @@
         }
 
         ComfyJS.onChat = (user, message, command) => {
-            let m = [settings.vips.replace("+", "', '").replace("%20", "', '")]
+            let m = [settings.vips?.replace("+", "', '").replace("%20", "', '")]
             console.log(m)
             if (!m.includes(user.toLowerCase())) return;
             let chat = document.querySelector("#chat>ul");
@@ -44,13 +44,13 @@
                 localStorage.setItem("t_word",args)
             }
             let ttl = Number(localStorage.getItem("c_word"));
-            const newMessage =ttl+ " "+ localStorage.getItem("t_word") + "'s";
+            const newMessage = ttl+ " "+ localStorage.getItem("t_word") + "'s";
             chat.textContent = newMessage;
         }
         ComfyJS.Init(streamer) 
     </script>
     <div id="chat" style="font-size:40px;">
-        <ul>Deaths: 0</ul>
+        <ul>Count: 0</ul>
     </div>
     <script>
         function changeBackgroundColor(color) {
