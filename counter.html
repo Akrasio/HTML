@@ -25,7 +25,7 @@
             vips
         }
 
-        ComfyJS.onChat = (user, message, command, flags) => {
+        ComfyJS.onChat = (user, command, flags, message) => {
             let chat = document.querySelector("#chat>ul");
             if (message.includes(localStorage.getItem("t_word") || settings.word)) {
                 let ttl = Number(localStorage.getItem("c_word"));
