@@ -2,10 +2,13 @@
 
 example usage (browser Sources in OBS/StreamLabs
 
-`https://ttvtool.mooo.com/?streamer=username&vips=user2+user2&hex=red`
-commands: `dc+`, `dc-` `dcr` (VIPs in uRL only!)
+`https://ttvtool.mooo.com/?streamer=username&hex=red`
+commands: `!dc+`, `!dc-` `!dcr`
 ![image](https://github.com/user-attachments/assets/a5ecfc96-510c-4e7e-a7b1-dc76ff22df47)
 
+`https://ttvtool.mooo.com/?streamer=username&hex=red&word=pogchamp`
+commands: `!word *`. `!wcr`
+![image](https://github.com/user-attachments/assets/668c154f-c922-4e14-8523-3b81c0992e91)
 
 Word Game:
 `https://ttvtool.mooo.com/word?streamer=user`
