@@ -24,13 +24,17 @@
             word,
             vips
         }
-
-        ComfyJS.onChat = (user, message, flags, command) => {
+        ComfyJS.onChat = (user, message, flags, self, extra) => {
             let chat = document.querySelector("#chat>ul");
-            if (command && message.includes(localStorage.getItem("t_word") || settings.word)) {
+            if (message.includes(localStorage.getItem("t_word") || settings.word)) {
                 let ttl = Number(localStorage.getItem("c_word"));
                 localStorage.setItem("c_word", ttl + 1)
+                chat.textContent = newMessage;   
             }
+        }
+        
+        ComfyJS.onCommand = (user, command, message, flags, self, extra) => {
+            let chat = document.querySelector("#chat>ul");
             let m = (flags.broadcaster || flags.mod || flags.vip)
             console.log(user+ " "+ message + " "+flags+ " "+ command)
             if (command && command == "dcr") {
