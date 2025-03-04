@@ -32,6 +32,7 @@
                 localStorage.setItem("c_word", ttl + 1)
             }
             let m = (flags.broadcaster || flags.mod || flags.vip)
+            console.log(m)
             if (command && command.startsWith("dcr")) {
             if (!m) return;
                 let ttl = Number(localStorage.getItem("c_word"));
