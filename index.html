@@ -16,19 +16,17 @@
         }
 
         var streamer = getQueryParam("streamer")
-        var vips = getQueryParam("vips")?.split(" ")
         var hex = getQueryParam("hex") || "red"
         var settings = {
-            hex,
-            vips
+            hex
         }
 
         ComfyJS.onCommand = (user, command, message, flags, self, extra) => {
             let m = (flags.broadcaster || flags.mod || flags.vip)
             if (m == false) return;
-            
+
             let chat = document.querySelector("#chat>ul");
-            if (command && command == dc+") {
+            if (command && command == dc + "") {
                 let ttl = Number(localStorage.getItem("deaths"));
                 localStorage.setItem("deaths", ttl + 1)
             }
@@ -36,7 +34,7 @@
                 let ttl = Number(localStorage.getItem("deaths"));
                 localStorage.setItem("deaths", 0)
             }
-            if (command && command ==  "dc-") {
+            if (command && command == "dc-") {
                 let ttl = Number(localStorage.getItem("deaths"));
                 localStorage.setItem("deaths", ttl - 1)
             }
