@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Overlay</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+    <script>
+        function getQueryParam(name) {
+            const regex = new RegExp('[?&]' + name + '=([^&#]*)', 'i');
+            const result = regex.exec(window.location.search);
+            return result ? decodeURIComponent(result[1]) : null;
+        }
+
+        var streamer = getQueryParam("streamer")
+        var hex = getQueryParam("hex") || "red"
+        
+
+        ComfyJS.onMessage = ( user, self, extra ) => {
+            chat = `<img src="https://www.achievement-maker.com/xbox/"+user+"?header=ACHIEVEMENT%20UNLOCKED&email=&player=1&ext=.gif"></img>`;
+		console.log(chat)
+		console.log(user)
+        }
+        ComfyJS.Init("ramenoodless_") 
+    </script>
+    <div id="chat" style="font-size:40px;">
+        <ul> !</ul>
+    </div>
+    <script>
+        function changeBackgroundColor(color) {
+            document.getElementById("chat").style.color = hex;
+        }
+    </script>
+</body>
+
+</html>
