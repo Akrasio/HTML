@@ -16,18 +16,18 @@
         }
 
         var streamer = getQueryParam("streamer")
+	var token = getQueryParam("t")
         var hex = getQueryParam("hex") || "red"
-        
 
-        ComfyJS.onMessage = ( user, self, extra ) => {
-            chat.textContent = `<img src="https://www.achievement-maker.com/xbox/"+user+"?header=ACHIEVEMENT%20UNLOCKED&email=&player=1&ext=.gif"></img>`;
-		console.log(chat)
-		console.log(user)
+   ComfyJS.onReward =  (user, reward, cost, message, extra) => {
+            const img = document.getElementById("myImage");
+            img.src = "https://www.achievement-maker.com/xbox/"+reward+"?header="+user+"&email=&player=1&ext=.gif"; // Replace with the new image URL
+
         }
-        ComfyJS.Init("ramenoodless_") 
+        ComfyJS.Init(streamer, token) 
     </script>
-    <div id="chat" style="font-size:40px;">
-        <ul> !</ul>
+    <img id="myImage" src="image1.jpg" alt="Image" width="300">
+
     </div>
     <script>
         function changeBackgroundColor(color) {
