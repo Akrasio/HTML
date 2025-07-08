@@ -22,7 +22,9 @@
    ComfyJS.onReward =  (user, reward, cost, message, extra) => {
             const img = document.getElementById("myImage");
             img.src = "https://www.achievement-maker.com/xbox/"+reward+"?header="+user+"&email=&player=1&ext=.gif"; // Replace with the new image URL
-
+	    setTimeout(()=>{
+		img.src = "img.png"; // Replace with the new image URL    
+	    },5000)
         }
         ComfyJS.Init(streamer, token) 
     </script>
