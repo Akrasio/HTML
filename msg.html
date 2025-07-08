@@ -20,7 +20,7 @@
         
 
         ComfyJS.onMessage = ( user, self, extra ) => {
-            chat = `<img src="https://www.achievement-maker.com/xbox/"+user+"?header=ACHIEVEMENT%20UNLOCKED&email=&player=1&ext=.gif"></img>`;
+            chat.textContent = `<img src="https://www.achievement-maker.com/xbox/"+user+"?header=ACHIEVEMENT%20UNLOCKED&email=&player=1&ext=.gif"></img>`;
 		console.log(chat)
 		console.log(user)
         }
