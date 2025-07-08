@@ -15,5 +15,11 @@ Word Game:
 commands: N/A (type 1 letter at a time)
 ![image](https://github.com/user-attachments/assets/be45606a-c26e-4d43-aa4c-d628f30969e8)
 
+Reward Alerts (XBOX) [All Point Redemptions]:
+`https://ttvtool.mooo.com/reward?t=OAUTHTOKEN&streamer=USERNAME`
+Replace OAUTHTOKEN with the token given from [This Token Generator](https://twitchapps.com/tokengen/)
+Replace username with your stream username
+![image](https://github.com/user-attachments/assets/11f9a8f1-35f9-48d9-8a11-08823280a087)
+
 
 No data is sent or saved by this site/app outside of your device. (all features/storage is just localStorage from the browser.
